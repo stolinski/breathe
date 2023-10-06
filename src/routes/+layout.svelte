@@ -49,12 +49,15 @@
 			}}>Anonymous</button
 		>
 	{/if}
-
-	{#if signin}
-		<Signin />
-	{/if}
-	{#if signup}
-		<Signup />
+	{#if signin || signup}
+		<div class="overlay">
+			{#if signin}
+				<Signin />
+			{/if}
+			{#if signup}
+				<Signup />
+			{/if}
+		</div>
 	{/if}
 </main>
 
@@ -102,5 +105,14 @@
 		gap: 20px;
 		max-width: 600px;
 		align-self: center;
+	}
+
+	.overlay {
+		position: fixed;
+		inset: 100px 0;
+	}
+
+	:global(.cl-rootBox) {
+		margin: 0 auto;
 	}
 </style>
