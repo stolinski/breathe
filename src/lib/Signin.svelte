@@ -1,4 +1,5 @@
 <script lang="ts">
+	// Thank you https://github.com/ErickRuano/clerk-svelte
 	import { onDestroy, onMount } from 'svelte';
 	import { clerk } from './clerk';
 

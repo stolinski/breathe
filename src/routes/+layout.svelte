@@ -6,7 +6,6 @@
 	import Signin from '$lib/Signin.svelte';
 	import Signup from '$lib/Signup.svelte';
 	import { clerk as clerk_store } from '$lib/clerk';
-	let logged_in = false;
 	let signin = false;
 	let signup = false;
 	let anon = false;
@@ -26,7 +25,7 @@
 </header>
 
 <main class="container" style="display: grid;">
-	{#if logged_in || anon}
+	{#if $clerk_store?.user || anon}
 		<slot />
 	{:else}
 		<h2>Welcome, are you ready to breathe?</h2>
