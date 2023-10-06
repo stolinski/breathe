@@ -1,5 +1,59 @@
+@font-face {
+	font-family: 'MDIO';
+	src: url('/fonts/MDIO-Regular.woff2') format('woff2'),
+		url('/fonts/MDIO-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MDIO';
+	src: url('/fonts/MDIO-Black.woff2') format('woff2'), url('/fonts/MDIO-Black.woff') format('woff');
+	font-weight: 900; /* Black */
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MDIO';
+	src: url('/fonts/MDIO-Bold.woff2') format('woff2'), url('/fonts/MDIO-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MDIO';
+	src: url('/fonts/MDIO-BoldItalic.woff2') format('woff2'),
+		url('/fonts/MDIO-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'MDIO';
+	src: url('/fonts/MDIO-BlackItalic.woff2') format('woff2'),
+		url('/fonts/MDIO-BlackItalic.woff') format('woff');
+	font-weight: 900; /* Black */
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'MDIO';
+	src: url('/fonts/MDIO-Medium.woff2') format('woff2'),
+		url('/fonts/MDIO-Medium.woff') format('woff');
+	font-weight: 500; /* Medium */
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MDIO';
+	src: url('/fonts/MDIO-MediumItalic.woff2') format('woff2'),
+		url('/fonts/MDIO-MediumItalic.woff') format('woff');
+	font-weight: 500; /* Medium */
+	font-style: italic;
+}
+
 :root {
-	font-family: 'MD IO';
+	font-family: 'MDIO';
 	font-style: italic;
 	font-size: 16px;
 	line-height: 24px;
