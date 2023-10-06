@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { NodeJS } from 'node';
 	import { action, is_active_action, status } from '$lib/status';
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';

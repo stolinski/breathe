@@ -1,14 +1,30 @@
 <script lang="ts">
 	import TimeClock from '$lib/TimeClock.svelte';
+	import Clerk from '@clerk/clerk-js';
 	import '$lib/styles.css';
+	import { onMount } from 'svelte';
+	import Signin from '$lib/Signin.svelte';
+	import Signup from '$lib/Signup.svelte';
+	import { clerk as clerk_store } from '$lib/clerk';
 	let logged_in = false;
+	let signin = false;
+	let signup = false;
 	let anon = false;
+
+	onMount(async () => {
+		// Don't worry, this key is publishable, I mean it says so right in the name. 😅
+		const clerkFrontendApi = 'pk_test_cGxlYXNlZC1vc3RyaWNoLTQ5LmNsZXJrLmFjY291bnRzLmRldiQ';
+		const clerk = new Clerk(clerkFrontendApi);
+		await clerk.load();
+		$clerk_store = clerk;
+	});
 </script>
 
 <header>
 	<h1>Breathe</h1>
 	<TimeClock />
 </header>
+
 <main class="container" style="display: grid;">
 	{#if logged_in || anon}
 		<slot />
@@ -16,13 +32,29 @@
 		<h2>Welcome, are you ready to breathe?</h2>
 		<p>Create an account to track, or anonymous just to try.</p>
 
-		<button>Login</button>
+		<button
+			on:click={() => {
+				signin = true;
+			}}>Login</button
+		>
+		<button
+			on:click={() => {
+				signup = true;
+			}}>Sign Up</button
+		>
 		<p>or</p>
 		<button
 			on:click={() => {
 				anon = true;
 			}}>Anonymous</button
 		>
+	{/if}
+
+	{#if signin}
+		<Signin />
+	{/if}
+	{#if signup}
+		<Signup />
 	{/if}
 </main>
 

@@ -4,13 +4,12 @@
 	import { status } from '$lib/status';
 	import { rounds, rounds_active } from '$lib/rounds';
 	import AudioFrame from '$lib/AudioFrame.svelte';
-	import TimeClock from '$lib/TimeClock.svelte';
 	import RoundsCompleted from '$lib/RoundsCompleted.svelte';
 	import Success from '$lib/Success.svelte';
 	import AnimationContainer from '$lib/AnimationContainer.svelte';
 
 	let audio_inputs = writable<MediaDeviceInfo[]>([]);
-	let selected_audio = writable<MediaDeviceInfo>(null);
+	let selected_audio = writable<MediaDeviceInfo | null>(null);
 
 	let load_devices_properties = {
 		audio: {
