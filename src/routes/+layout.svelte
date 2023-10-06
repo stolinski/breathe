@@ -51,6 +51,12 @@
 	{/if}
 	{#if signin || signup}
 		<div class="overlay">
+			<button
+				on:click={() => {
+					signin = false;
+					signup = false;
+				}}>Close</button
+			>
 			{#if signin}
 				<Signin />
 			{/if}
