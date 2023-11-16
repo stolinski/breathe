@@ -1,22 +1,22 @@
 <script lang="ts">
 	import TimeClock from '$lib/TimeClock.svelte';
-	import Clerk from '@clerk/clerk-js';
+	// import Clerk from '@clerk/clerk-js';
 	import '$lib/styles.css';
-	import { onMount } from 'svelte';
-	import Signin from '$lib/Signin.svelte';
-	import Signup from '$lib/Signup.svelte';
-	import { clerk as clerk_store } from '$lib/clerk';
-	let signin = false;
-	let signup = false;
-	let anon = false;
+	// import { onMount } from 'svelte';
+	// import Signin from '$lib/Signin.svelte';
+	// import Signup from '$lib/Signup.svelte';
+	// import { clerk as clerk_store } from '$lib/clerk';
+	// let signin = false;
+	// let signup = false;
+	// let anon = false;
 
-	onMount(async () => {
-		// Don't worry, this key is publishable, I mean it says so right in the name. 😅
-		const clerkFrontendApi = 'pk_test_cGxlYXNlZC1vc3RyaWNoLTQ5LmNsZXJrLmFjY291bnRzLmRldiQ';
-		const clerk = new Clerk(clerkFrontendApi);
-		await clerk.load();
-		$clerk_store = clerk;
-	});
+	// onMount(async () => {
+	// 	// Don't worry, this key is publishable, I mean it says so right in the name. 😅
+	// 	const clerkFrontendApi = 'pk_test_cGxlYXNlZC1vc3RyaWNoLTQ5LmNsZXJrLmFjY291bnRzLmRldiQ';
+	// 	const clerk = new Clerk(clerkFrontendApi);
+	// 	await clerk.load();
+	// 	$clerk_store = clerk;
+	// });
 </script>
 
 <header>
@@ -25,9 +25,9 @@
 </header>
 
 <main class="container" style="display: grid;">
-	{#if $clerk_store?.user || anon}
-		<slot />
-	{:else}
+	<!-- {#if $clerk_store?.user || anon} -->
+	<slot />
+	<!-- {:else}
 		<h2>Welcome, are you ready to breathe?</h2>
 		<p>Create an account to track, or anonymous just to try.</p>
 
@@ -63,7 +63,7 @@
 				<Signup />
 			{/if}
 		</div>
-	{/if}
+	{/if} -->
 </main>
 
 <footer>
