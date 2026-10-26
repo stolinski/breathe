@@ -33,5 +33,6 @@
 	"dependencies": {
 		"@clerk/clerk-js": "^4.73.14",
 		"waait": "^1.0.5"
-	}
+	},
+	"packageManager": "pnpm@8.15.9"
 }
